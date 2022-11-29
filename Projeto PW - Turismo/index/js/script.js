@@ -12,7 +12,10 @@ input.addEventListener("keypress", function(e){
 
         if(result.includes("lugares") || result.include("Lugares") || result.include("locais") || result.include("Locais") || result.include("Pontos") || result.include("pontos")){
         location.href = "../lugares/lugares.html";
-    }
+        
+        }else if (result.includes("Caribe") || result.includes("caribe")){
+            location.href = "#title1"
+        }
     }
     
     
@@ -20,11 +23,13 @@ input.addEventListener("keypress", function(e){
 
 btnn.addEventListener("click", () =>{
     
-        var result = input.value;
+    var result = input.value;
 
-        if(result.includes("lugares") || result.include("Lugares") || result.include("locais") || result.include("Locais") || result.include("Pontos") || result.include("pontos")){
+    if(result.includes("lugares") || result.include("Lugares") || result.include("locais") || result.include("Locais") || result.include("Pontos") || result.include("pontos")){
         location.href = "../lugares/lugares.html";
     
+    }else if (result.includes("Caribe") || result.includes("caribe")){
+        location.href = "../index/index.html/#title1"
     }
     
     
@@ -32,9 +37,11 @@ btnn.addEventListener("click", () =>{
 
 blb.addEventListener("click", () =>{
     
-    if(anside.classList.contains("fechado")){
+    if(anside.classList.contains("fechado") || anside.classList.contains("i")){
         anside.classList.add("aberto");
         anside.classList.remove("fechado");
+        anside.classList.remove("i");
+        
     }
     else if(anside.classList.contains("aberto")){
         anside.classList.add("fechado");

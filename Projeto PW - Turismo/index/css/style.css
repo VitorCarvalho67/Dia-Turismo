@@ -200,7 +200,6 @@ aside:hover{
     background-color: var(--color-a);
 }
 
-
 @keyframes abrir {
     0%{
         width: 3vw;
@@ -209,6 +208,28 @@ aside:hover{
     100%{
         width: 333px;
     }
+}
+
+@keyframes fechar{
+    0%{
+        width: 333px;
+    }
+    100%{
+        width: 0px;
+    }
+}
+.aberto{
+    animation: abrir 1s ease-out;
+    width: 333px;
+    backdrop-filter: blur(5px);
+    background-color: var(--color-a);
+}
+
+.fechado{
+    animation: fechar 1s ease-out;
+    width: 0px;
+    backdrop-filter: blur(5px);
+    background-color: var(--color-a);
 }
 
 .cards-box{
@@ -277,6 +298,7 @@ aside:hover{
     font-family: var(--font-p);
     letter-spacing: 2px;
     transition-delay: 1s;
+    text-decoration: none;
 }
 
 .text h1{

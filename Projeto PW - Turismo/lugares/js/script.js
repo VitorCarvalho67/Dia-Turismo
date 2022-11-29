@@ -33,9 +33,11 @@ btnn.addEventListener("click", () =>{
 
 blb.addEventListener("click", () =>{
     
-    if(anside.classList.contains("fechado")){
+    if(anside.classList.contains("fechado") || anside.classList.contains("i")){
         anside.classList.add("aberto");
         anside.classList.remove("fechado");
+        anside.classList.remove("i");
+        
     }
     else if(anside.classList.contains("aberto")){
         anside.classList.add("fechado");

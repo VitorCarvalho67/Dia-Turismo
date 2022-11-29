@@ -198,7 +198,14 @@ aside:hover{
     }
 }
 
-
+@keyframes fechar{
+    0%{
+        width: 333px;
+    }
+    100%{
+        width: 0px;
+    }
+}
 .aberto{
     animation: abrir 1s ease-out;
     width: 333px;
@@ -206,15 +213,22 @@ aside:hover{
     background-color: var(--color-a);
 }
 
+.fechado{
+    animation: fechar 1s ease-out;
+    width: 0px;
+    backdrop-filter: blur(5px);
+    background-color: var(--color-a);
+}
+
 main{
-    height: 80vh;
+    height: 600px;
     width: 100vw;
     display: grid;
     border-radius: none;
     z-index: 2;
     object-fit: cover;
     z-index: 1;
-    border: solid 4px var(--color-s);
+
 }
 .s1,.s2,.s3{
     overflow: hidden;
@@ -224,7 +238,7 @@ main{
 #reset{
     position: absolute;
     z-index: 3;
-    height: 80vh;
+    height: 600px;
     left: 0;    
     opacity: 0.4;
     width: 50px;
@@ -233,7 +247,7 @@ main{
 #next{
     position: absolute;
     z-index: 2;
-    height: 80vh;
+    height: 600px;
     right: 0;
     opacity: 0.35;
     width: 50px;
@@ -280,7 +294,7 @@ main{
 
 .balls div{
     border: solid 2px var(--color-p);
-    background-color: rgba(0, 225, 255, 0.781);
+    background-color: rgba(255, 255, 255, 0.781);
     border-radius: 100px;
     padding: 30px;
     height: 120px; 
@@ -299,11 +313,10 @@ main{
     height: auto;
     width: 100vw;
     background-color: rgb(255, 245, 234);
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% 50%;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     font-family: var(--font-p);
 }
 
@@ -311,16 +324,21 @@ main{
     display: flex;
     flex-direction: column;
     border: solid 2px var(--color-p);
-    height: 180px;
-    width: 80vw;
+    height: 300px;
+    width: 40vw;
     font-family: var(--font-s);
     border-radius: 5px;
-    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 50px;
 }
 
-.lugares h1{
+ .h1{
+    text-align: center;
     background-color: var(--color-p);
-    color: black;
+    color: white;
+    background-image: linear-gradient(to left,rgb(255, 94, 0), rgb(255, 123, 0));
     font-family: var(--font-p);
 }
 
@@ -396,7 +414,8 @@ main{
     }
 
     .lugares{
-        width: 95%;
+        width: 92%;
+        margin: 10px;
     }
 
     .fin{
@@ -425,13 +444,38 @@ main{
         overflow: hidden;
     }
 }
+@media screen and (max-width: 700px){
+    nav{
+        grid-template-columns: 30% 50% 20%;
+    }
+    .logo-nav{
+        font-size: 12px;
+    }
+    .btn-nav{
+        justify-content: center;
+    }
+    .cont{
+        grid-template-columns: 100%;
+    }
+}
 
 @media screen and (max-width:500px){
+
+    main{   
+        height: 300px;
+    }
+    #reset{
+        height: 300px;
+    }
+    #next{
+        height: 300px;
+    }
+
     .balls div{
         margin:  0px 2.5vw  0px 2.5vw;
         height: 70px;
         width: 70px;
-        padding: 0;
+        padding: 7px;
     }
     .fin{
         height: 400px;
